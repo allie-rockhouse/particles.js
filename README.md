@@ -1,154 +1,47 @@
-## particles.js
+# Trueline Animation
 
-### A lightweight JavaScript library for creating particles.
+CREDIT: https://vincentgarreau.com/particles.js/
 
-------------------------------
-### `Demo / Generator`
+A simple floating animation for Trueline.
 
-<a href="http://vincentgarreau.com/particles.js/" target="_blank"><img src="http://vincentgarreau.com/particles.js/assets/img/github-screen.jpg" alt="particles.js generator" /></a>
+## Instructions 
 
-Configure, export, and share your particles.js configuration on CodePen: <br />
-http://vincentgarreau.com/particles.js/
+### In WordPress
+1. Add the id "particles-js" to the container you want the animation to appear in.
+2. Add this code to the functions.php file: **TBD**
+3. Edit the JSON file (see below) to change the behaviors of the animation.
 
-CodePen demo: <br />
-http://codepen.io/VincentGarreau/pen/pnlso
+## JSON Data Fields 
 
--------------------------------
-### `Usage`
+**How to read the JSON file**
 
-Load particles.js and configure the particles:
+  The chart below describes all the possible changes that can be made to the animation. You can access individual data fields inside of the JSON file using the "." modifier. JSON files are nested using brackets. 
 
-**index.html**
-```html
-<div id="particles-js"></div>
-
-<script src="particles.js"></script>
+  Example: 
+  
+  particles.shape.type refers to the highlighted value inside particles.json;
 ```
-
-**app.js**
-```javascript
-/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load('particles-js', 'assets/particles.json', function() {
-  console.log('callback - particles.js config loaded');
-});
-```
-
-**particles.json**
-```javascript
-{
   "particles": {
     "number": {
-      "value": 80,
-      "density": {
-        "enable": true,
-        "value_area": 800
+      ...
       }
     },
     "color": {
-      "value": "#ffffff"
+      ...
     },
     "shape": {
-      "type": "circle",
+      "type":"image", <!-- this line--!>
       "stroke": {
-        "width": 0,
-        "color": "#000000"
+        ...
       },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 10,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 80,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 300,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 2
-    },
-    "move": {
-      "enable": true,
-      "speed": 12,
-      "direction": "none",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
+      ...
     }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": false,
-        "mode": "repulse"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 800,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 800,
-        "size": 80,
-        "duration": 2,
-        "opacity": 0.8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 400,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
-}
 ```
+Changing "type" : "image" to "type" : "circle" would remove the smiley faces and replace them with circles.  
 
--------------------------------
-
+You can edit the code in real time on this website: https://codepen.io/VincentGarreau/pen/bGxvQd
+Only edit the JSON inside of the JS file.
+      
 ### `Options`
 
 key | option type / notes | example
@@ -208,36 +101,8 @@ key | option type / notes | example
 `interactivity.events.modes.push.particles_nb` | number | `4`
 `retina_detect` | boolean | `true` / `false`
 
--------------------------------
 
-### `Packages install`
 
-##### ***npm***
-https://www.npmjs.com/package/particles.js
-```
-npm install particles.js
-```
 
-##### ***Bower***
-```
-bower install particles.js --save
-```
 
-##### ***Rails Assets***
-```
-gem 'rails-assets-particles.js'
-```
 
-##### ***Meteor***
-https://atmospherejs.com/newswim/particles
-```
-meteor add newswim:particles
-```
-
--------------------------------
-
-### `Hosting / CDN`
-
-***Please use this host or your own to load particles.js on your projects***
-
-http://www.jsdelivr.com/#!particles.js
