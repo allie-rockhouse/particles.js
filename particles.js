@@ -40,7 +40,7 @@ var pJS = function(tag_id, params){
                 "nb_sides": 0
             },
             "image": {
-                "src": "https://raw.githubusercontent.com/allie-rockhouse/TruelineAnimation/refs/heads/main/SVG/ODD23_Trueline_Brand-Assets_Smiley-03.svg",
+                "src": "SVG/ODD23_Trueline_Brand-Assets_Smiley-03.svg",
                 "width": 100,
                 "height": 100
             }
